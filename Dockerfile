@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM busybox:latest
+FROM alpine:3.10
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 ADD entrypoint.sh /entrypoint.sh
