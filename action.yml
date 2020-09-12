@@ -1,6 +1,8 @@
 # action.yml
 name: 'Cloudflare Workers route update'
 description: 'A Cloudflare worker action to change worker route between other steps'
+icon: 'cloud'
+color: 'orange'
 inputs:
   CF_EMAIL:
     description: 'Cloudflare Email'
