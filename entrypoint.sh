@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 email=$1
 apikey=$2
 zone_id=$3
