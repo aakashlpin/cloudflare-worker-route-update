@@ -1,0 +1,38 @@
+# action.yml
+name: 'Cloudflare Workers route update'
+description: 'A Cloudflare worker action to change worker route between other steps'
+inputs:
+  CF_EMAIL:
+    description: 'Cloudflare Email'
+    required: true
+    default: null
+  CF_API_KEY:
+    description: 'Cloudflare API Key'
+    required: true
+    default: null
+  CF_ZONE_ID:
+    description: 'Cloudflare Zone Id'
+    required: true
+    default: null
+  CF_ROUTE_ID:
+    description: 'Cloudflare Route Id'
+    required: true
+    default: null
+  CF_WORKER_NAME:
+    description: 'Cloudflare Worker Name'
+    required: true
+    default: null
+  CF_ROUTE_PATTERN:
+    description: 'Cloudflare Worker New Route Pattern'
+    required: true
+    default: null
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.CF_EMAIL }}
+    - ${{ inputs.CF_API_KEY }}
+    - ${{ inputs.CF_ZONE_ID }}
+    - ${{ inputs.CF_ROUTE_ID }}
+    - ${{ inputs.CF_WORKER_NAME }}
+    - ${{ inputs.CF_ROUTE_PATTERN }}

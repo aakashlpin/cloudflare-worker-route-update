@@ -1,10 +1,10 @@
 #!/bin/bash
-email=$CF_EMAIL
-apikey=$CF_API_KEY
-zone_id=$CF_ZONE_ID
-route_id=$CF_ROUTE_ID
-route_pattern=$CF_ROUTE_PATTERN
-worker=$CF_WORKER_NAME
+email=$1
+apikey=$2
+zone_id=$3
+route_id=$4
+worker=$5
+route_pattern=$6
 
 curl -X PUT "https://api.cloudflare.com/client/v4/zones/"$zone_id"/workers/routes/"$route_id"" \
 -H "X-Auth-Email: "$email"" \
